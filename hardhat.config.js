@@ -1,4 +1,8 @@
 require("@nomiclabs/hardhat-waffle");
+require("dotenv").config();
+
+const alchemy_api_key = process.env.alchemy_api_key;
+const private_key = process.env.private_key;
 
 /**
  * @type import('hardhat/config').HardhatUserConfig

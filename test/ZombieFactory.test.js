@@ -1,6 +1,6 @@
-const { expect, should } = require("chai");
+const { expect } = require("chai");
 const { ethers } = require("hardhat");
-// require("chai").should();
+require("chai").should();
 
 describe("ZombieFactory", () => {
 	let ZombieFactory;
@@ -20,5 +20,13 @@ describe("ZombieFactory", () => {
 		console.log(zombies);
 
 		expect(zombies.length).to.equal(1);
+	});
+
+	it("should not allow a player to create two zombies in a row", async () => {
+		await zombieFactory.connect(user1).createRandomZombie("Jad");
+		await zombieFactory
+			.connect(user1)
+			.createRandomZombie("Jad")
+			.should.be.revertedWith("The owner already called this function once");
 	});
 });

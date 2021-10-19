@@ -50,4 +50,12 @@ contract ZombieFactory {
 
 		_createZombie(_name, randDna);
 	}
+
+	/**
+	 * @dev Returns the array of all the zombies
+	 * @return The array of all the zombies
+	 */
+	function getZombies() public view returns (Zombie[] memory) {
+		return zombies;
+	}
 }

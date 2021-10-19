@@ -8,7 +8,7 @@ const private_key = process.env.private_key;
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
-	solidity: "0.8.0",
+	solidity: "0.8.9",
 	networks: {
 		ropsten: {
 			url: `https://eth-ropsten.alchemyapi.io/v2/${alchemy_api_key}`,

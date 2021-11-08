@@ -6,7 +6,9 @@
 	"scripts": {
 		"test": "npx hardhat test",
 		"compile": "npx hardhat compile",
-		"deploy:ropsten": "npx hardhat run scripts/deploy.js --network ropsten"
+		"deploy:ropsten": "npx hardhat run scripts/deploy.js --network ropsten",
+		"docker:migrate": "docker-compose -p cz-migrate -f docker-compose.migrate.yaml up",
+		"docker:test": "docker-compose -p cz-tests -f docker-compose.tests.yaml up"
 	},
 	"repository": {
 		"type": "git",
